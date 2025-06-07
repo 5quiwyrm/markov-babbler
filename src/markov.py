@@ -11,9 +11,9 @@ def generate_data(corpuspath: str, depth: int) -> str:
     i = 0
     a = 0
     for ch in corpus[depth:]:
-      if a + 0.01 < (i / (len(corpus) - depth)):
-        print("progress:", i / (len(corpus) - depth), "%")
-        a += 0.01
+      if a + 0.05 < (i / (len(corpus) - depth)):
+        print(f"progress: ({a / 0.05} / {1 / 0.05}) {i} / {len(corpus) - depth}")
+        a += 0.05
       i += 1
       if gram not in data:
         data.update({gram: {}})
